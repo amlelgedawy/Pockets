@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/signIn.css" />
+
+    <title>Home</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.jpeg" width="180" height="80" alt="Logo" />
+          </a>
+        </div>
+
+        <ul class="nav-list">
+          <li><a href="index.html" class="anchor">Home</a></li>
+          <li class="drop-list">
+            <a href="allProduct.html" class="anchor">Products</a>
+            <ul class="drop-down">
+              <li class="image-p">
+                <a href="men.html">
+                  <img src="images/men.jpeg" alt="Men products" />
+                  <div class="image-title"><span>Men</span></div>
+                </a>
+              </li>
+              <li class="image-p">
+                <a href="women.html">
+                  <img src="images/slider2.jpeg" alt="Women products" />
+                  <div class="image-title"><span>Women</span></div>
+                </a>
+              </li>
+              <li class="image-p">
+                <a href="unisex.html">
+                  <img src="images/unisex.png " alt="Unisex Products" />
+                  <div class="image-title"><span>Unisex</span></div>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav-icons">
+          <li onclick="showPopup()">
+            <i class="fa-solid fa-user"></i>
+          </li>
+          <li><i class="fa-solid fa-cart-shopping"></i></li>
+          <li><i class="fa-solid fa-heart"></i></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Navbar -->
+    <!-- Slider -->
+    <div class="slider">
+      <div class="slides">
+        <div class="slide active">
+          <img src="images/slider1.jpg" alt="Image 1" />
+        </div>
+        <div class="slide">
+          <img src="images/slider2.jpg" alt="Image 2" />
+        </div>
+        <div class="slide">
+          <img src="images/slider3.jpeg" alt="Image 3" />
+        </div>
+      </div>
+      <div class="indicators">
+        <span class="indicator active" onclick="showSlide(0)"></span>
+        <span class="indicator" onclick="showSlide(1)"></span>
+        <span class="indicator" onclick="showSlide(2)"></span>
+      </div>
+    </div>
+    <!-- Slider -->
+    <!-- Our Products -->
+    <!-- Modal Popup Container -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closePopup()">&times;</span>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+          <h2 class="form-title">Login</h2>
+          <form id="login">
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" required />
+            <h2 class="validation-message" id="loginEmailError"></h2>
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required />
+            <h2 class="validation-message" id="loginPasswordError"></h2>
+
+            <button type="button" class="submit-button" onclick="login()">
+              Login
+            </button>
+          </form>
+          <p>
+            Don't have an account?
+            <a href="#" onclick="toggleForms()">Sign up</a>
+          </p>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signupForm" style="display: none">
+          <h2 class="form-title">Signup</h2>
+          <form id="signup">
+            <label for="signupEmail">Email:</label>
+            <input type="email" id="signupEmail" required />
+            <h2 class="validation-message" id="signupEmailError"></h2>
+
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" required />
+            <h2 class="validation-message" id="signupPasswordError"></h2>
+
+            <label for="signupConfirmPassword">Confirm Password:</label>
+            <input type="password" id="signupConfirmPassword" required />
+            <h2 class="validation-message" id="signupConfirmPasswordError"></h2>
+
+            <button type="button" class="submit-button" onclick="signup()">
+              Sign Up
+            </button>
+          </form>
+          <p>
+            Already have an account?
+            <a href="#" onclick="toggleForms()">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="products-parent">
+      <div class="title-parent">
+        <h2>Our Products</h2>
+        <p>The stylish and organized cosmetic products</p>
+      </div>
+      <!-- Product -->
+      <div class="product-parent">
+        <div class="product">
+          <div class="bar"></div>
+          <div class="image-parent">
+            <img src="images/m8.jpg" alt="product" />
+          </div>
+          <p class="title">Armani stronger with you intensely edp-100 ml</p>
+          <div class="stars-container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="price-container">
+            <span>$110.00</span>
+          </div>
+        </div>
+        <div class="product">
+          <div class="bar"></div>
+          <div class="image-parent">
+            <img src="images/m5.jpg" alt="product" />
+          </div>
+          <p class="title">ck defy edp-100 ml</p>
+          <div class="stars-container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="price-container">
+            <span>$90.00</span>
+          </div>
+        </div>
+        <div class="product">
+          <div class="bar"></div>
+          <div class="image-parent">
+            <img src="images/w3.jpg" alt="product" />
+          </div>
+          <p class="title">juicy flowers 120ml</p>
+          <div class="stars-container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="price-container">
+            <span>$100.00</span>
+          </div>
+        </div>
+        <div class="product">
+          <div class="bar"></div>
+          <div class="image-parent">
+            <img src="images/w7.jpg" alt="product" />
+          </div>
+          <p class="title">si passione intense 100 mlml</p>
+          <div class="stars-container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="price-container">
+            <span>$120.00</span>
+          </div>
+        </div>
+      </div>
+      <!-- Product -->
+      <div class="view-more">
+        <a href="allproductss.html">
+          <button>View More</button>
+        </a>
+      </div>
+    </div>
+    <!-- Our Products -->
+    <!-- new collection -->
+    <div class="products-parent">
+      <div class="title-parent">
+        <h2>New Collections</h2>
+        <p>A perfume that makes dressing complete</p>
+      </div>
+      <!-- Product -->
+      <div class="product-parent">
+        <div class="product">
+          <div class="bar"></div>
+          <div class="image-parent">
+            <img src="images/unisex6.jpeg" alt="product" />
+          </div>
+          <p class="title">jtc - join the club 400 - edp 50 ml</p>
+          <div class="stars-container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="price-container">
+            <span>$110.00</span>
+          </div>
+        </div>
+        <div class="product">
+          <div class="bar"></div>
+          <div class="image-parent">
+            <img src="images/w8.jpg" alt="product" />
+          </div>
+          <p class="title">la vie est belle iris abslou-100 ml</p>
+          <div class="stars-container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="price-container">
+            <span>$90.00</span>
+          </div>
+        </div>
+        <div class="product">
+          <div class="bar"></div>
+          <div class="image-parent">
+            <img src="images/w5.jpg" alt="product" />
+          </div>
+          <p class="title">ysl libre le parfum-50 ml</p>
+          <div class="stars-container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="price-container">
+            <span>$60.00</span>
+          </div>
+        </div>
+        <div class="product">
+          <div class="bar"></div>
+          <div class="image-parent">
+            <img src="images/m4.jpg" alt="product" />
+          </div>
+          <p class="title">acqua di gio profondo edp-75 ml</p>
+          <div class="stars-container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="price-container">
+            <span>$30.00</span>
+          </div>
+        </div>
+      </div>
+      <!-- Product -->
+      <div class="view-more">
+        <a href="allproductss.html">
+          <button>View More</button>
+        </a>
+      </div>
+    </div>
+    <!-- new collection -->
+    <!-- footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-title">
+          <h2 class="title">About Us</h2>
+          <p class="desc">
+            At POCKETS, we specialize in curating an exceptional collection of
+            luxury perfumes, blending timeless classics with modern elegance.
+            Our mission is to help you discover the perfect scent that embodies
+            your unique style and enhances every moment. Explore our range and
+            let fragrance elevate your senses.
+          </p>
+        </div>
+        <div class="footer-title">
+          <h2 class="title">Contact Us</h2>
+          <p class="desc">Phone: +2 05846</p>
+        </div>
+        <div class="footer-title">
+          <h2 class="title">Follow Us</h2>
+          <div>
+            <a href="https://www.facebook.com/" target="_blank">
+              <p><i class="fa-brands fa-facebook"></i> <span>Facebook</span></p>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <p>
+                <i class="fa-brands fa-instagram"></i> <span>Instagram</span>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer -->
+    <script src="js/script.js"></script>
+    <script src="js/formvalidation.js"></script>
+  </body>
+</html>
